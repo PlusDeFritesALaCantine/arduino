@@ -1,0 +1,18 @@
+# Fichiers de build Arduino IDE
+build/
+*.elf
+*.bin
+*.hex
+*.map
+
+# Cache Arduino IDE
+.arduino15/
+cache/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
