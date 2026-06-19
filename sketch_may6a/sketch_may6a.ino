@@ -18,5 +18,5 @@ void loop() {
   }
   String jsonMessage = "{\"temperature\": " + String(t) + ", \"humidity\": " + String(h) + "}";
   Serial.println(jsonMessage);
-  delay(60000);
+  delay(10000);
 }
