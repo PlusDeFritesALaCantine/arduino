@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Installer arduino-cli
+        uses: arduino/setup-arduino-cli@v1
+
+      - name: Installer le core AVR
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+
+      - name: Installer les librairies
+        run: arduino-cli lib install "DHT sensor library"
+
+      - name: Compiler le sketch
+        run: arduino-cli compile --fqbn arduino:avr:uno sketch_may6a/
